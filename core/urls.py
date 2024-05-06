@@ -18,12 +18,15 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 from users.views import login, profile, contacts
+from chat.views import chat, chatProfile
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', login),
     path('profile/<int:id>/', profile),
-    path('contacts/<int:id>/', contacts)
+    path('contacts/<int:id>/', contacts),
+    path('chat/<int:id>/<int:idd>/', chat),
+    path('chat/<int:id>/<int:idd>/profile', chatProfile)
 ]
 
 from django.conf.urls.static import static

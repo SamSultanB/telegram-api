@@ -1,7 +1,8 @@
 from rest_framework import serializers
+from .models import ChatMessage
 
-# class ProfileSerializer(serializers.ModelSerializer):
+class ChatMessageSerializer(serializers.ModelSerializer):
 
-#     class Meta: 
-#         model = Profile
-#         fields = '__all__'
+    class Meta: 
+        model = ChatMessage
+        fields = '__all__'

@@ -17,7 +17,10 @@ def login(request):
 @api_view(['GET', 'PUT'])
 def profile(request, id):
 
-    profile = Profile.objects.get(id = id)
+    try:
+        profile = Profile.objects.get(id=id)
+    except Profile.DoesNotExist:
+        return Response({'error': 'Profile not found'}, status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
         serializer = ProfileSerializer(profile)
@@ -33,7 +36,10 @@ def profile(request, id):
 @api_view(['GET'])
 def contacts(request, id):
 
-    profile = Profile.objects.get(id = id)
+    try:
+        profile = Profile.objects.get(id=id)
+    except Profile.DoesNotExist:
+        return Response({'error': 'Profile not found'}, status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
         serializer = ContactSerializer(profile.contacts.all(), many=True)
