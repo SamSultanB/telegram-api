@@ -25,7 +25,7 @@ git clone https://github.com/SamSultanB/telegram-api.git
 cd django-telegram-clone
 ```
 
-### 2. Clone the repository
+### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
