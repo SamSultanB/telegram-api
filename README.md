@@ -21,7 +21,7 @@ Follow these steps to set up and run the Django Telegram Clone project:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/django-telegram-clone.git
+git clone https://github.com/SamSultanB/telegram-api.git
 cd django-telegram-clone
 ```
 
